@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+<h1 style="text-align:center;"> Edit <%= campground.name %></h1>
+<div style="width:30%; margin:30px auto">
+  <form method="POST" action="/campgrounds/<%= campground._id %>?_method=PUT">
+    <input class="form-control form-group" type="text" name="campground[name]" value="<%= campground.name %>">
+    <input class="form-control form-group" type="number" name="campground[price]" value="<%= campground.price %>" min="1" step="1">
+    <input class="form-control form-group" type="text" name="campground[image]" value="<%= campground.img %>">
+    <textarea class="form-control form-group" name="campground[description]"><%= campground.description %> </textarea>
+    <button class="btn btn-lg btn-primary btn-block form-group">submit</button>
+</form>
+<a href="/campgrounds">Go back</a>
+</div>
+
+</div>
